@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Punto 2 - </title>
+    <title>Punto 2 - PENDIENTE</title>
 
     <style>
         div {
@@ -14,6 +14,7 @@
             display: block;
             float: left;
             margin-right: 10px;
+            margin-top: 10px;
             border: 1px solid #aaaaaa;
         }
     </style>
@@ -22,22 +23,33 @@
 
 <body>
     
+    <!--Creamos el BOTÓN 1-->
+    <button onclick="agregarDiv()" type="button"> 1. Agregar div </button>
+    <!--Creamos el BOTÓN 2-->
+    <button onclick="eliminarDivs()" type="button"> 2. Borrar divs </button>
+
+
     <section id="contenedor">    
-        <div class="estiloInicial"></div>
-        <div class="estiloInicial"></div>
-        <div id="texto"></div>
+        <div class=""></div>
     </section>
     
     <script>                
     
-    // Creamos el elemento
-    var elemento = document.createElement("div");
-    // Buscamos el padre de los elementos por medio del ID, en este caso
-    var padre = document.getElementById("contenedor");
-    // Creamos una variable de referencia para poder insertar nuestro nuevo elemento
-    var ref = document.getElementsByTagName("div")[0];
-    // Agregamos el elemento en la posición que deseamos de acuerdo a nuestra variable ref
-    padre.insertBefore(elemento, ref);
+    var nuevoDiv = document.getElementsByClassName("div");
+
+    // BOTÓN 1. Agregar divs.
+    function agregarDiv() {
+        // Creamos el nuevo div
+        var nuevoDiv = document.createElement("div");
+        // Buscamos el padre de los elementos por medio del ID, en este caso
+        var padre = document.getElementById("contenedor");
+        // Creamos una variable de referencia para poder insertar nuestro nuevo elemento
+        var ref = document.getElementsByTagName("div")[0];
+        // Agregamos el elemento en la posición que deseamos de acuerdo a nuestra variable ref
+        padre.insertBefore(nuevoDiv, ref);
+    }
+
+    // BOTÓN 2. Eliminar divs.
 
     </script>
 </body>
