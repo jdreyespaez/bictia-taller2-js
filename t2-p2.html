@@ -8,8 +8,8 @@
 
     <style>
         div {
-            width: 200px;
-            height: 200px;
+            width: 15px;
+            height: 15px;
             background: #dddddd;
             display: block;
             float: left;
@@ -52,11 +52,10 @@
         padre.insertBefore(nuevoDiv, ref);
 
         var arregloDivs = document.getElementsByTagName("div");
-        // Primero debo crear el elemento
         for (i = 0; i < arregloDivs.length; i++) {
         var elementoTexto = document.createElement("p");
         // Ahora crearé el nodo con texto
-        var contenidoTextual = document.createTextNode("# " + i);
+        var contenidoTextual = document.createTextNode(i);
         // Agrego el elemento al nodo
         elementoTexto.appendChild(contenidoTextual);
         // Meto el elementoTexto al div que deseo
