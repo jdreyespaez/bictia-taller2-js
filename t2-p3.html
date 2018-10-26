@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Punto 3 - OK</title>
+
+    <style>
+        .slider-container {
+            position: relative;
+            margin: auto;
+            height: 300px;
+        }
+
+        .flecha {
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+
+<body>
+        <div class="slider-container">
+            
+            <div class="imgs">
+                <img src="https://www.weatherworksinc.com/sites/default/files/Clouds%20cover%20photo.png">
+                <h2>1/4</h2>
+            </div>
+              
+            <div class="imgs">
+                <img src="https://revisionworld.com/sites/revisionworld.com/files/imce/cirrus%20clouds.jpg">
+                <h2>2/4</h2>
+            </div>
+                
+            <div class="imgs">
+                <img src="https://media.cuinsight.com/wp-content/uploads/2015/07/39538-167de416.jpg">
+                <h2>3/4</h2>
+            </div>
+
+            <div class="imgs">
+                <img src="https://envirosolarpower.com/wp-content/uploads/2017/05/reflective-cooling-clouds.jpeg">
+                <h2>4/4</h2>
+            </div>
+                
+            <a class="flecha" onclick="otraImg(-1)">&#10094;</a>
+            <a class="flecha" onclick="otraImg(1)">&#10095;</a>
+
+        </div>
+    
+    <script>  
+        // Inicializo la variable índice de imagen       
+        var imgIndex = 1;
+        // Por defecto el slider mostrará la primera imagen
+        mostrarImg(imgIndex);
+
+        // Segundo, creo un contador de imágenes, al hacer click se suma o resta
+        function otraImg(n) {
+        mostrarImg(imgIndex += n);
+        }
+
+        function mostrarImg(n) {
+            // Primero, defino cuál es el arreglo de elementos
+            var imgs = document.getElementsByClassName("imgs");
+
+            if (n > imgs.length) {
+                imgIndex = 1;
+            }
+            if (n < 1) {
+                imgIndex = imgs.length;
+            }
+            // Aquí deja de mostrar los elementos del arreglo, usando style.dislay = "none"
+            for (i = 0; i < imgs.length; i++) {
+                imgs[i].style.display = "none";
+            }
+            // Al final define cuál es el elemento a mostrar
+            imgs[imgIndex - 1].style.display = "block";
+        }
+    </script>
+</body>
+</html>
