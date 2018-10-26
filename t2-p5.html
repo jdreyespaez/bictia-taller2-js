@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Punto 5 - OK</title>
+
+    <style>
+
+        div {
+            margin: 0px auto;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <!--Primero, creo las funciones que deseo ejecutar con los botones-->
+    <button onclick="zoomIn()" type="button" id="zoomIn"> + </button>
+    <button onclick="zoomOut()" type="button" id="zoomOut"> - </button>
+
+    <div>
+        <img id="imagen" src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" width="300" height="300">
+
+    </div>
+    
+
+    <script>                
+    
+    // Selecciono el elemento a modificar
+    var imagen = document.getElementById("imagen");
+
+    // Programa las funciones de cada botón, cambio los estilos apuntando a una de las propiedad del objeto
+    // Para la transición suave aplico el .style.transition
+    function zoomIn() {
+        imagen.width = 600;
+        imagen.height = 600;
+        imagen.style.transition = "all 2s";
+    }
+
+    function zoomOut() {
+        imagen.width = 300;
+        imagen.height = 300;
+        imagen.style.transition = "all 2s";
+    }
+
+    </script>
+</body>
+</html>
