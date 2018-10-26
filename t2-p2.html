@@ -27,15 +27,17 @@
     <button onclick="agregarDiv()" type="button"> 1. Agregar div </button>
     <!--Creamos el BOTÓN 2-->
     <button onclick="borrarDivs()" type="button"> 2. Borrar divs </button>
+    <!--Creamos el BOTÓN 3-->
+    <button onclick="borrarDivsImpares()" type="button"> 3. Borrar divs impares </button>
+
 
 
     <section id="contenedor">    
-        <div class=""></div>
     </section>
     
     <script>                
     
-    // BOTÓN 1. Agregar divs.
+    // BOTÓN 1. Agregar divs y enumerarlos.
     function agregarDiv() {
         // Creo un nuevo div
         var nuevoDiv = document.createElement("div");
@@ -45,6 +47,20 @@
         var ref = document.getElementsByTagName("div")[0];
         // Agregamos el elemento en la posición que deseamos de acuerdo a nuestra variable ref
         padre.insertBefore(nuevoDiv, ref);
+
+        var arregloDivs = document.getElementsByTagName("div");
+        // Primero debo crear el elemento
+        for (i = 0; i < arregloDivs.length; i++) {
+        var elementoTexto = document.createElement("p");
+        // Ahora crearé el nodo con texto
+        var contenidoTextual = document.createTextNode("# " + i);
+        // Agrego el elemento al nodo
+        elementoTexto.appendChild(contenidoTextual);
+        // Meto el elementoTexto al div que deseo
+        arregloDivs[i].appendChild(elementoTexto);
+        }
+
+
     }
 
     // BOTÓN 2. Eliminar divs.
@@ -54,6 +70,18 @@
         console.log(arregloDivs);
         for (i = 0; i < arregloDivs.length; i++) {
             arregloDivs[i].style.display = "none";
+        }
+    }
+
+    // BOTÓN 3. Eliminar divs impares.
+    function borrarDivsImpares() {
+        // Construir un arreglo con todos los divs
+        var arregloDivs = document.getElementsByTagName("div");
+
+        for (i = 0; i < arregloDivs.length; i++) {
+            if (i % 2 != 0) {
+                arregloDivs[i].style.display = "none";
+            }
         }
     }
 
