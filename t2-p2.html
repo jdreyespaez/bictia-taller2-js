@@ -29,6 +29,9 @@
     <button onclick="borrarDivs()" type="button"> 2. Borrar divs </button>
     <!--Creamos el BOTÓN 3-->
     <button onclick="borrarDivsImpares()" type="button"> 3. Borrar divs impares </button>
+    <!--Creamos el BOTÓN 4 y un casilla para saber qué borrar-->
+    <input type="number" name="divBorrado" id="divBorrado">
+    <button onclick="borrarDivEspecifico()" type="button"> 4. Borrar div específico </button>
 
 
 
@@ -83,6 +86,21 @@
                 arregloDivs[i].style.display = "none";
             }
         }
+    }
+
+    // BOTÓN 4. Borrar div específico
+    function borrarDivEspecifico() {
+        var arregloDivs = document.getElementsByTagName("div");
+        var divBorrado = document.getElementById("divBorrado").value;
+        
+
+        for (i = 0; i < arregloDivs.length; i++) {
+            if (i == divBorrado) {
+                arregloDivs[i].style.display = "none";
+            }
+        }
+        
+        console.log("Se borró el div " + divBorrado);
     }
 
     </script>
