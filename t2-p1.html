@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Punto 1 - PENDIENTE</title>
+
+    <style>
+        #reproductor {
+            width: 550px;
+            background: #000;
+            margin: 0px auto;
+        }
+
+        #sample-video {
+            width: 550px;
+            height: 300px;
+        }
+    </style>
+
+</head>
+
+<body>
+    
+    <div id="reproductor">
+        <video id="sample-video" controls>
+            <source src="sample-video.ogv">
+        </video>
+        <button onclick="silenciar()" type="button" id="mutebtn">Silenciar</button>
+        <input type="range" id="volumen" min="0" max="100" value="100" step="1">
+    </div>
+    
+   
+
+    
+    <script>       
+
+        // Primero, defino los objetos de referencia
+        var vid = document.getElementById("sample-video");
+        var mutebtn = document.getElementById("mutebtn");
+        var volumen = document.getElementById("volumen");
+
+        // Segundo, creo el evento que será escuchado para ejecutar la función de volumen
+        volumen.addEventListener("change", ajustarVolumen, false);
+
+        // Tercer, defino las funciones que manejar la propiedad vid.muted y vid.volume
+        function silenciar() { 
+            if (vid.muted) {
+                vid.muted = false;
+                mutebtn.innerHTML = "Silenciar";
+                volumen.value = 100;
+            } else {
+                vid.muted = true;
+                mutebtn.innerHTML = "Silenciado";
+                volumen.value = 0;
+            }
+        }
+
+        function ajustarVolumen() {
+            vid.volume = volumen.value / 100;
+        }
+
+    </script>
+</body>
+</html>
