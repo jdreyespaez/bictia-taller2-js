@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Punto 4 - OK</title>
+
+    <style>
+        div {
+            width: 50px;
+            height: 50px;
+            display: block;
+            float: left;
+            margin-right: 10px;
+            border: 1px solid black;
+        }
+
+        #amarillo {
+            background: yellow;
+        }
+
+        #azul {
+            background: blue;
+        }
+
+        #rojo {
+            background: red;
+        }
+
+        #naranja {
+            background: orange;
+        }
+
+        #verde {
+            background: green;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+    
+    <!--Primero, agrego la función con el color que deseo cambiar-->
+    <a onmouseover="cambiarColor('yellow')">
+        <div id="amarillo"></div>
+    </a>
+    <a onmouseover="cambiarColor('blue')">
+        <div id="azul"></div>
+    </a>
+    <a onmouseover="cambiarColor('red')">
+        <div id="rojo"></div>
+    </a>
+    <a onmouseover="cambiarColor('orange')">
+        <div id="naranja"></div>
+    </a>
+    <a onmouseover="cambiarColor('green')">
+        <div id="verde"></div>
+    </a>
+    
+    <script>
+
+        // Segundo, programo la función que hace cambiarColor
+        function cambiarColor(colorElegido) { 
+            // Tercero, accedo al objeto document para cambiar la propiedad bgColor
+            document.bgColor=colorElegido; 
+        }
+        
+    </script>
+</body>
+</html>
