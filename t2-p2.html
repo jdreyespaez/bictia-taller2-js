@@ -26,7 +26,7 @@
     <!--Creamos el BOTÓN 1-->
     <button onclick="agregarDiv()" type="button"> 1. Agregar div </button>
     <!--Creamos el BOTÓN 2-->
-    <button onclick="eliminarDivs()" type="button"> 2. Borrar divs </button>
+    <button onclick="borrarDivs()" type="button"> 2. Borrar divs </button>
 
 
     <section id="contenedor">    
@@ -35,11 +35,9 @@
     
     <script>                
     
-    var nuevoDiv = document.getElementsByClassName("div");
-
     // BOTÓN 1. Agregar divs.
     function agregarDiv() {
-        // Creamos el nuevo div
+        // Creo un nuevo div
         var nuevoDiv = document.createElement("div");
         // Buscamos el padre de los elementos por medio del ID, en este caso
         var padre = document.getElementById("contenedor");
@@ -50,6 +48,14 @@
     }
 
     // BOTÓN 2. Eliminar divs.
+    function borrarDivs() {
+        // Creo un arreglo con todos los divs
+        var arregloDivs = document.getElementsByTagName("div");
+        console.log(arregloDivs);
+        for (i = 0; i < arregloDivs.length; i++) {
+            arregloDivs[i].style.display = "none";
+        }
+    }
 
     </script>
 </body>
